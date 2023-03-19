@@ -9,6 +9,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Pointerpt", "Pointerpt\Poin
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Variableargument", "Variableargument\Variableargument.vcxproj", "{337CC528-0396-4CFA-A486-94C305D0E62D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Practice", "Practice", "{75217AD2-6D2C-45BE-8FAA-97B65EDD7B3D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HomeWork0317", "HomeWork0317\HomeWork0317.vcxproj", "{C0AE4BC8-B0BF-49FF-BE13-46553D3CCE5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,9 +45,22 @@ Global
 		{337CC528-0396-4CFA-A486-94C305D0E62D}.Release|x64.Build.0 = Release|x64
 		{337CC528-0396-4CFA-A486-94C305D0E62D}.Release|x86.ActiveCfg = Release|Win32
 		{337CC528-0396-4CFA-A486-94C305D0E62D}.Release|x86.Build.0 = Release|Win32
+		{C0AE4BC8-B0BF-49FF-BE13-46553D3CCE5D}.Debug|x64.ActiveCfg = Debug|x64
+		{C0AE4BC8-B0BF-49FF-BE13-46553D3CCE5D}.Debug|x64.Build.0 = Debug|x64
+		{C0AE4BC8-B0BF-49FF-BE13-46553D3CCE5D}.Debug|x86.ActiveCfg = Debug|Win32
+		{C0AE4BC8-B0BF-49FF-BE13-46553D3CCE5D}.Debug|x86.Build.0 = Debug|Win32
+		{C0AE4BC8-B0BF-49FF-BE13-46553D3CCE5D}.Release|x64.ActiveCfg = Release|x64
+		{C0AE4BC8-B0BF-49FF-BE13-46553D3CCE5D}.Release|x64.Build.0 = Release|x64
+		{C0AE4BC8-B0BF-49FF-BE13-46553D3CCE5D}.Release|x86.ActiveCfg = Release|Win32
+		{C0AE4BC8-B0BF-49FF-BE13-46553D3CCE5D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F54E7F72-ABE1-495D-9E3C-A0E21EAE19DA} = {75217AD2-6D2C-45BE-8FAA-97B65EDD7B3D}
+		{B6A83679-FF2A-4572-941E-43CC17B34C0C} = {75217AD2-6D2C-45BE-8FAA-97B65EDD7B3D}
+		{337CC528-0396-4CFA-A486-94C305D0E62D} = {75217AD2-6D2C-45BE-8FAA-97B65EDD7B3D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {51593F6E-E6D1-466A-879C-5E79E84A0DA5}

@@ -243,7 +243,9 @@ int main()
 
 
 		int* Test = Value[2000];
+		{
 		int a = 0;
+		}
 	}
 
 

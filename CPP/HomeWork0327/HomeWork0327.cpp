@@ -3,11 +3,8 @@
 
 #include <iostream>
 #include <conio.h>
-// 운영체제가 도와줄수밖에 없다.
 #include <Windows.h>
 
-// 이게 0단계
-// 근본오브 근본 수학 물리 
 class int2
 {
 public:
@@ -21,10 +18,6 @@ public:
 	}
 
 public:
-	// 이건 내일 합니다.
-	//int2() 
-	//{
-	//}
 
 	int2(int _X, int _Y)
 		: X(_X), Y(_Y)
@@ -33,13 +26,63 @@ public:
 	}
 };
 
-// 이게 1단계
-// 근본오브 근본 수학 물리 
+class Map
+{
+public:
+
+	 int MapXSize = 0;
+	int MapYSize = 0;
+
+	Map(const int2& _Size): MapXSize(_Size.X),MapYSize(_Size.Y)
+	{
+
+	}
+
+
+	 int2 GetMapSize()
+	{
+		return int2{ MapXSize,MapYSize };
+	}
+
+	 void SetMapSize(const int2& _Size)
+	 {
+		 MapXSize = _Size.X;
+		 MapYSize = _Size.Y;
+	}
+
+
+	bool IsScreenOver(const int2& _Pos)
+	{
+		if (0 > _Pos.X)
+		{
+			return true;
+		}
+
+		if (0 > _Pos.Y)
+		{
+			return true;
+		}
+
+		if (MapXSize <= _Pos.X)
+		{
+			return true;
+		}
+
+		if (MapYSize <= _Pos.Y)
+		{
+			return true;
+		}
+
+		return false;
+	}
+
+
+};
+
+
 class ConsoleGameScreen
 {
-	// 메모리 영역 자체가 달라졌다고 봐야합니다.
 public:
-	// 클래스 내부에 전역변수를 선언할수가 있습니다.
 	static const int ScreenYSize = 10;
 	static const int ScreenXSize = 20;
 
@@ -73,35 +116,11 @@ public:
 		}
 	}
 
-	// 이녀석을 무조건 사용해서 플레이어가 바깥으로 못나가게 만드세요.
-	bool IsScreenOver(const int2& _Pos)
-	{
-		if (0 > _Pos.X)
-		{
-			return true;
-		}
-
-		if (0 > _Pos.Y)
-		{
-			return true;
-		}
-
-		if (ScreenXSize <= _Pos.X)
-		{
-			return true;
-		}
-
-		if (ScreenYSize <= _Pos.Y)
-		{
-			return true;
-		}
-
-		return false;
-	}
+	
 
 	void SetScreenCharacter(const int2& _Pos, char _Ch)
 	{
-		if (true == IsScreenOver(_Pos))
+		if (true == NewMap.IsScreenOver(_Pos))
 		{
 			return;
 		}
@@ -111,14 +130,11 @@ public:
 
 private:
 	char Arr[ScreenYSize][ScreenXSize] = { 0, };
-
+	Map NewMap= Map(GetScreenSize());
 };
 
-/////////////////////////////////////////////////////////////////// 엔진
 
 
-// 2단계 컨텐츠
-// 클래스가 다른 클래스를 알아야 합니다.
 class Player
 {
 public:
@@ -139,8 +155,6 @@ public:
 		{
 			// 0.5초간 멈춘다.
 			Sleep(InterFrame);
-			// 일부러 멈추게 만들겁니다.
-			// continue; 반복문 내부에서만 사용가능
 			return;
 		}
 
@@ -151,7 +165,7 @@ public:
 		case 'a':
 		case 'A':
 			Pos.X -= 1;
-			if (Map.IsScreenOver(Pos))
+			if (NewMap.IsScreenOver(Pos))
 			{
 				Pos.X += 1;
 			}
@@ -159,7 +173,7 @@ public:
 		case 'd':
 		case 'D':
 			Pos.X += 1;
-			if (Map.IsScreenOver(Pos))
+			if (NewMap.IsScreenOver(Pos))
 			{
 				Pos.X -= 1;
 			}
@@ -168,7 +182,7 @@ public:
 		case 'W':
 			Pos.Y -= 1;
 
-			if (Map.IsScreenOver(Pos))
+			if (NewMap.IsScreenOver(Pos))
 			{
 				Pos.Y += 1;
 			}
@@ -177,7 +191,7 @@ public:
 		case 'S':
 			Pos.Y += 1;
 
-			if (Map.IsScreenOver(Pos))
+			if (NewMap.IsScreenOver(Pos))
 			{
 				Pos.Y -= 1;
 			}
@@ -197,7 +211,7 @@ private:
 
 	int2 Pos = int2(0, 0);
 
-	ConsoleGameScreen Map;
+	Map NewMap=Map(Pos);
 };
 
 

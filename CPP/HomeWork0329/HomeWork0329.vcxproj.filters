@@ -11,7 +11,9 @@
     <ClCompile Include="Player.cpp">
       <Filter>Level2</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Level2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Level0">
@@ -22,9 +24,6 @@
     </Filter>
     <Filter Include="Level2">
       <UniqueIdentifier>{d540c642-115e-4813-a6a2-3e5c05a03f3d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Level3">
-      <UniqueIdentifier>{cd68cd2e-1995-4d77-ab12-4e97f13d4643}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +36,8 @@
     <ClInclude Include="Player.h">
       <Filter>Level2</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Bullet.h">
+      <Filter>Level2</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

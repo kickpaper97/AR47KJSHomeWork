@@ -6,7 +6,7 @@
 
 Player::Player()
 {
-
+	RenderChar = '*';
 }
 // 화면바깥으로 못나가게 하세요. 
 void Player::Input()
@@ -64,10 +64,10 @@ void Player::Input()
 		break;
 	case 'f':
 	case 'F':
-
-		LaunchGun();
-
+	{
+		ShotUpdate();
 		break;
+	}
 	default:
 		break;
 	}
@@ -75,21 +75,15 @@ void Player::Input()
 	Sleep(InterFrame);
 }
 
-void Player::LaunchGun()
+void Player::ShotUpdate()
 {
-	if (BulletCount > Bullet::ArrBulletCount)
+	Bullet& NewBullet = BulletPtr[BulletCount];
+	NewBullet.SetPos(Pos);
+	NewBullet.On();
+
+	++BulletCount;
+	if (BulletCount >= Bullet::ArrBulletCount)
 	{
-		return;
+		BulletCount = 0;
 	}
-
-	BulletPtr[BulletCount].SetPos(Pos);
-	BulletPtr[BulletCount].FireOn();
-
-	BulletCount+=1;
-}
-
-
-void Player::Render()
-{
-	ConsoleGameScreen::GetMainScreen().SetScreenCharacter(Pos, '*');
 }

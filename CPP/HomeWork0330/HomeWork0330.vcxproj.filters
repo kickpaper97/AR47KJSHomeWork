@@ -2,17 +2,51 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="HomeWork0330.cpp" />
-    <ClCompile Include="ConsoleGameScreen.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="ShootingGame.cpp" />
-    <ClCompile Include="Bullet.cpp" />
-    <ClCompile Include="ConsoleGameMath.cpp" />
+    <ClCompile Include="ConsoleGameMath.cpp">
+      <Filter>Level0</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="ConsoleGameScreen.cpp">
+      <Filter>Level1</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Level2</Filter>
+    </ClCompile>
+    <ClCompile Include="ShootingGame.cpp">
+      <Filter>Level3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ConsoleGameScreen.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="ShootingGame.h" />
-    <ClInclude Include="Bullet.h" />
-    <ClInclude Include="ConsoleGameMath.h" />
+    <ClInclude Include="ConsoleGameMath.h">
+      <Filter>Level0</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Level2</Filter>
+    </ClInclude>
+    <ClInclude Include="ConsoleGameScreen.h">
+      <Filter>Level1</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Level2</Filter>
+    </ClInclude>
+    <ClInclude Include="ShootingGame.h">
+      <Filter>Level3</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Level0">
+      <UniqueIdentifier>{0f5f56d2-5ca6-4fe7-be46-80b96652fa46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level1">
+      <UniqueIdentifier>{98b36c71-bcb8-42ea-a81a-574ba0b2cf54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level2">
+      <UniqueIdentifier>{4d0dbef1-1e07-440f-a4c5-bed4bfd0644c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Level3">
+      <UniqueIdentifier>{79b60099-a877-4775-ab70-de037ee63740}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

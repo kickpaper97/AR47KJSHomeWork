@@ -69,25 +69,12 @@ void ShootingGame::Collision()
 
 void ShootingGame::MonsterEndCheck()
 {
-	// 1. 움직이게 한다.
-
-	// 2. 끝에 어떠한 몬스터중 단 1개라도 닿았는지 확인한다.
-	//    2-1. 왼쪽 끝을체크한다.
-	//    2-2. 오른쪽 끝에 닿은걸 체크한다.
-	//if (몬스터가 왼쪽 끝에 닿았다)
-	//{
-	//	int a = 0;
-	//}
-
-	// 3. 방향을 바꾼다.
-
-	// 4. 내려도 본다.
 	int2 NextPos = {0, 0};
 
 	for (size_t i = 0; i < ArrMonsterCount; i++) {
 		if (false == ArrMonster[i].IsUpdate())
 		{
-			return;
+			continue;
 		}
 		NextPos = ArrMonster[i].GetPos();
 		NextPos.X += ArrMonster[i].GetDir();

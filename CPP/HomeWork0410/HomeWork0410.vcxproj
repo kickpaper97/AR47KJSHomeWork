@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{d50c40f3-dda5-4a31-85b0-9a83ed1114c9}</ProjectGuid>
-    <RootNamespace>HomeWork0405</RootNamespace>
+    <ProjectGuid>{60feadf2-1005-4abf-8687-f8ca9b744ce4}</ProjectGuid>
+    <RootNamespace>HomeWork0410</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,17 +139,33 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="GameEngineArray.cpp">
+    <ClCompile Include="Bomb.cpp" />
+    <ClCompile Include="ConsoleObjectManager.cpp" />
+    <ClCompile Include="Flame.cpp">
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="HomeWork0405.cpp" />
+    <ClCompile Include="GameEnum.cpp" />
+    <ClCompile Include="HomeWork0410.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameEngineArray.h">
+    <ClInclude Include="Bomb.h" />
+    <ClInclude Include="ConsoleObjectManager.h" />
+    <ClInclude Include="Flame.h">
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="GameEnum.h" />
+    <ClInclude Include="Player.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GameEngineBase\GameEngineBase.vcxproj">
+      <Project>{f08ba8d1-0735-4ec2-b062-eac0fa25fe48}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\GameEngineConsole\GameEngineConsole.vcxproj">
+      <Project>{ac5d2e73-ebfb-4063-acd0-a9017086e827}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

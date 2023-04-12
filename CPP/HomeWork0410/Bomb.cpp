@@ -33,10 +33,6 @@ void Bomb::Update()
 			NewFlame[i]->SetDir((int)i);
 		}
 
-		if (NewFlame == nullptr)
-		{
-			return;
-		}
 
 		
 	}

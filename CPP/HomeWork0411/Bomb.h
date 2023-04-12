@@ -24,7 +24,7 @@ protected:
 	void Render() override;
 
 private:
-	int BoomCount = 5;
+	int BoomCount = 20;
 	int MaxExpPower = 5;
 	int CurExpPower = 0;
 };

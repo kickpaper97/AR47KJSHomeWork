@@ -70,6 +70,7 @@ bool Player::IsGetItem()
 			ItemGroup.erase(Now);
 			return true;
 		}
+		Now++;
 	}
 	return false;
 }
@@ -79,12 +80,10 @@ void Player::Update()
 {
 	if (0 == _kbhit())
 	{
-
-	if (true == IsGetItem())
-	{
-
+		if (true == IsGetItem())
+		{
 		BombPower++;
-	}
+		}
 		return;
 	}
 
@@ -149,4 +148,10 @@ void Player::Update()
 	default:
 		break;
 	}
+
+	if (true == IsGetItem())
+	{
+		BombPower++;
+	}
+
 }

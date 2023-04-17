@@ -17,7 +17,7 @@ GameEngineRandom::GameEngineRandom(int _Seed)
 
 int GameEngineRandom::RandomInt(int _Min, int _Max)
 {
-	return (rand() % (_Max + 1 - _Min)) + _Min;
+	return (rand() % (_Max+1  - _Min)) + _Min;
 }
 
 GameEngineRandom::~GameEngineRandom() 

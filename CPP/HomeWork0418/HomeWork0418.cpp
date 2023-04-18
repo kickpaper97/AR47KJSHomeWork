@@ -9,6 +9,7 @@
 #include <GameEngineConsole/ConsoleObjectManager.h>
 #include "Head.h"
 #include "Body.h"
+#include "GameEnum.h"
 #include <conio.h>
 
 int main()
@@ -20,12 +21,11 @@ int main()
 
 	GameEngineDebug::LeckCheck();
 
-	int2 ScreenSize = {2, 3 };
+	int2 ScreenSize = { 3, 3 };
 	ConsoleGameScreen::GetMainScreen().SetScreenSize(ScreenSize);
 
-	ConsoleObjectManager::CreateConsoleObject<Head>(0);
+	ConsoleObjectManager::CreateConsoleObject<Head>(SnakeGameOrder::Head);
 
-	ConsoleObjectManager::CreateConsoleObject<Body>(1);
 
 
 	// 1번째 
@@ -33,6 +33,7 @@ int main()
 	// 바디가 존재하지 않는 공간에 만들 방법을 생각해 내야 합니다.
 	// 추천 벡터를 이용해라.
 	// 빈공간이 나올때가지 랜덤돌린다 <= 최악의 선택
+	ConsoleObjectManager::CreateConsoleObject<Body>(SnakeGameOrder::Body);
 	// 주의사항 절대 클리어 못하는 상황이 나오는데 이건 처리 안해도 됩니다.
 
 	// 2번째 플레이어 먹으면 아이템은 몸통으로 뒤따라오게 만들고
@@ -46,31 +47,21 @@ int main()
 
 	while (true == Head::IsPlay)
 	{
-		if (false == Head::IsBody)
-		{
-			ConsoleObjectManager::CreateConsoleObject<Body>(0);
-			Head::IsBody = true;
-		}
-
-		ConsoleObjectManager::ConsoleAllObjectUpdate();
-
 		if (false == Body::IsSpace)
 		{
-		system("cls");
-		std::cout << "축하합니다" << std::endl;
-		break;
+			system("cls");
+			std::cout << "축하합니다" << std::endl;
+			break;
 		}
 
+
+		ConsoleObjectManager::ConsoleAllObjectUpdate();
 		ConsoleObjectManager::ConsoleAllObjectRender();
 		ConsoleObjectManager::ConsoleAllObjectRelease();
-		
-		
 		Sleep(200);
 	}
 
 	ConsoleObjectManager::ConsoleAllObjectDelete();
-
-
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴

@@ -27,7 +27,7 @@ public:
 
 	bool IsScreenOver(const int2& _Pos) const;
 
-	void SetScreenCharacter(const int2& _Pos, char _Ch);
+	void SetScreenCharacter(const int2& _Pos, wchar_t _Ch);
 
 protected:
 
@@ -38,7 +38,7 @@ private:
 
 	// GameEngineArray<char> ArrPtr 여러개 
 	// char를 여러개 가질수 있는 녀석
-	GameEngineArray<GameEngineArray<char>> ArrScreen;
+	GameEngineArray<GameEngineArray<wchar_t>> ArrScreen;
 
 	int2 Size;
 

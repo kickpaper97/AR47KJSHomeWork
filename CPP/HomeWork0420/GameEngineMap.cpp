@@ -80,8 +80,8 @@ int main()
         std::pair<std::map<int, int>::iterator, bool> Value5 
             = Test.insert(std::pair<int, int>(15, rand()));
 
-        std::map<int, int>::iterator FindIter = Test.find(1);
-        std::map<int, int>::iterator NextIter = Test.erase(FindIter);
+        //std::map<int, int>::iterator FindIter = Test.find(1);
+        //std::map<int, int>::iterator NextIter = Test.erase(FindIter);
 
         int a = 0;
 

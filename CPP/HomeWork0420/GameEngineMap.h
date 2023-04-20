@@ -415,12 +415,13 @@ public:
 	// ???
 	iterator rend()
 	{
-		if (nullptr == Root)
+		/*if (nullptr == Root)
 		{
 			return end();
 		}
 
-		return iterator(Root->MinNode());
+		return iterator(Root->MinNode());*/
+		return iterator();
 	}
 
 

@@ -4,6 +4,8 @@
 typedef int KeyType;
 typedef int ValueType;
 
+template<typename DataType0, typename DataType1>
+
 class GameEnginePair 
 {
 public:
@@ -11,12 +13,12 @@ public:
 	ValueType second;
 
 public:
-	GameEnginePair()
+	GameEnginePair<DataType0,DataType1>()
 	{
 
 	}
 
-	GameEnginePair(const KeyType& _Key, const ValueType& _Value)
+	GameEnginePair<DataType0, DataType1>(const DataType0 _Key, const DataType1 _Value)
 		: first(_Key), second(_Value)
 	{
 
@@ -24,6 +26,8 @@ public:
 };
 
 // 설명 :
+template<typename DataType0, typename DataType1>
+
 class GameEngineMap
 {
 public:
@@ -34,7 +38,7 @@ public:
 		MapNode* Parent = nullptr;
 		MapNode* LeftChild = nullptr;
 		MapNode* RightChild = nullptr;
-		GameEnginePair Pair;
+		GameEnginePair<DataType0,DataType1> Pair;
 
 		bool IsLeaf() 
 		{
@@ -257,7 +261,7 @@ public:
 
 		}
 
-		GameEnginePair* operator->() 
+		GameEnginePair<DataType0, DataType1>* operator->()
 		{
 			return &Node->Pair;
 		}
@@ -444,7 +448,8 @@ public:
 
 
 	// 안들어가면 false리턴
-	bool insert(const GameEnginePair& _Pair)
+
+	bool insert(const GameEnginePair<DataType0, DataType1>& _Pair)
 	{
 		if (nullptr == Root)
 		{

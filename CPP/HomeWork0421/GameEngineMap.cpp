@@ -32,20 +32,20 @@ int main()
     GameEngineDebug::LeckCheck();
 
     {
-        GameEngineMap Test;
-        Test.insert(GameEnginePair(10, rand()));
-        Test.insert(GameEnginePair(7, rand()));
-        Test.insert(GameEnginePair(15, rand()));
-        Test.insert(GameEnginePair(25, rand()));
-        Test.insert(GameEnginePair(17, rand()));
-        Test.insert(GameEnginePair(18, rand()));
-        Test.insert(GameEnginePair(2, rand()));
-        Test.insert(GameEnginePair(6, rand()));
-        Test.insert(GameEnginePair(5, rand()));
-        Test.insert(GameEnginePair(4, rand()));
-        Test.insert(GameEnginePair(9, rand()));
-        Test.insert(GameEnginePair(8, rand()));
-        Test.insert(GameEnginePair(1, rand()));
+        GameEngineMap<int, int> Test;
+        Test.insert(GameEnginePair<int, int>(10, rand()));
+        Test.insert(GameEnginePair<int, int>(7, rand()));
+        Test.insert(GameEnginePair<int, int>(15, rand()));
+        Test.insert(GameEnginePair<int, int>(25, rand()));
+        Test.insert(GameEnginePair<int, int>(17, rand()));
+        Test.insert(GameEnginePair<int, int>(18, rand()));
+        Test.insert(GameEnginePair<int, int>(2, rand()));
+        Test.insert(GameEnginePair<int, int>(6, rand()));
+        Test.insert(GameEnginePair<int, int>(5, rand()));
+        Test.insert(GameEnginePair<int, int>(4, rand()));
+        Test.insert(GameEnginePair<int, int>(9, rand()));
+        Test.insert(GameEnginePair<int, int>(8, rand()));
+        Test.insert(GameEnginePair<int, int>(1, rand()));
 
         //{
         //    GameEngineMap::iterator FindIter = Test.find(7);
@@ -74,8 +74,8 @@ int main()
 
 
         std::cout << "그냥 돌리기" <<  std::endl;
-        GameEngineMap::iterator StartIter = Test.begin();
-        GameEngineMap::iterator EndIter = Test.end();
+        GameEngineMap<int, int>::iterator StartIter = Test.begin();
+        GameEngineMap<int, int>::iterator EndIter = Test.end();
         for (; StartIter != EndIter; ++StartIter)
         {
             std::cout << StartIter->first << std::endl;
